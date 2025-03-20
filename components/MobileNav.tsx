@@ -29,10 +29,10 @@ const MobileNav = ({ user }: MobileNavProps) => {
             className="cursor-pointer"
           />
         </SheetTrigger>
-        <SheetContent side="left" className="border-none bg-white">
+        <SheetContent side="left" className="border-none bg-white p-4">
           <Link
             href="/"
-            className="mb-12 cursor-pointer items-center gap-1 px-4 flex"
+            className="cursor-pointer items-center gap-2 flex"
           >
             <Image
               src={"/icons/logo.svg"}
@@ -47,7 +47,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
 
           <div className="mobilenav-sheet">
             <SheetClose asChild>
-              <nav className="flex h-full flex-col fap-6 pt-16 text-white">
+              <nav className="flex h-full flex-col gap-6 pt-10 text-white">
                 {sidebarLinks.map((item) => {
                   const isActive =
                     pathname === item.route ||
