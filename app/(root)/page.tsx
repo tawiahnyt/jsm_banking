@@ -6,7 +6,11 @@ import TotalBalanceBox from "@/components/TotalBalanceBox";
 import React from "react";
 
 const Home = () => {
-  const loggedIn = { firstName: "tawiah", lastName: "in4k", email: 'contact@tawiah.com' };
+  const loggedIn = {
+    firstName: "tawiah",
+    lastName: "in4k",
+    email: "contact@tawiah.com",
+  };
 
   return (
     <section className="home">
@@ -19,13 +23,16 @@ const Home = () => {
             subtext="Access and manage your account and transactions efficiently."
           />
 
-          <TotalBalanceBox accounts={[]} totalBanks={1} totalCurrentBalance={792422.28} />
+          <TotalBalanceBox
+            accounts={[]}
+            totalBanks={1}
+            totalCurrentBalance={792422.28}
+          />
         </header>
-
         RECENT TRANSACTIONS
       </div>
 
-      <RightSideBar user={loggedIn} transactions={[]} banks={[]} />
+      <RightSideBar user={loggedIn} transactions={[]} banks={[{currentBalance: 21344.33}, {currentBalance:2903.23}]} />
     </section>
   );
 };
