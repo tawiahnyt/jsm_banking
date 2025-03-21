@@ -24,10 +24,10 @@ const Sidebar = ({ user }: SiderbarProps) => {
           />
           <h1 className="sidebar-logo">Horizon</h1>
         </Link>
-
         {sidebarLinks.map((item) => {
           const isActive =
-            pathname === item.route || pathname.startsWith(item.route);
+            pathname === item.route || pathname.startsWith(`${item.route}/`);
+
           return (
             <Link
               href={item.route}
@@ -39,7 +39,9 @@ const Sidebar = ({ user }: SiderbarProps) => {
                   src={item.imgURL}
                   alt={item.label}
                   fill
-                  className={cn({ "brightness-[3] invert-0": isActive })}
+                  className={cn({
+                    "brightness-[3] invert-0": isActive,
+                  })}
                 />
               </div>
               <p className={cn("sidebar-label", { "!text-white": isActive })}>
@@ -48,10 +50,9 @@ const Sidebar = ({ user }: SiderbarProps) => {
             </Link>
           );
         })}
-
+        
         USER
       </nav>
-
       FOOTER
     </section>
   );
