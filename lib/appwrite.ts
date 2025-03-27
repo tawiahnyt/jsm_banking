@@ -10,12 +10,22 @@ export async function createSessionClient() {
     .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
     .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!);
 
-  const session = await cookies().get("apwrite-session");
-  if (!session || !session.value) {
-    throw new Error("No session");
-  }
+  // const session = await cookies().get("apwrite-session");
+  // if (!session || !session.value) {
+  //   throw new Error("No session");
+  // }
 
-  client.setSession(session.value);
+  // client.setSession(session.value);
+
+  try {
+    const cookieStore = cookies();
+    const session = (await cookieStore).get("appwrite-session");
+    if (session?.value) {
+      client.setSession(session.value);
+    }
+  } catch (error) {
+    console.error("Error getting session:", error);
+  }
 
   return {
     get account() {
