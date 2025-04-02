@@ -52,10 +52,11 @@ export async function getLoggedInUser() {
 
     return parseStringify(user);
   } catch (error) {
-    console.error("Error", error);
+    console.log(error);
     return null;
   }
 }
+
 
 export const logoutAccount = async () => {
   try {
