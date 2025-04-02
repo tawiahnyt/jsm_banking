@@ -1,6 +1,10 @@
 /** @format */
 
+<<<<<<< HEAD
 'use client'
+=======
+"use client";
+>>>>>>> 296cf462311a6519f7b26acbf2700501e4b83173
 
 import React from "react";
 import {
@@ -14,9 +18,16 @@ import Link from "next/link";
 import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+<<<<<<< HEAD
 
 const MobileNav = ({ user }: MobileNavProps) => {
     const pathname = usePathname()
+=======
+import Footer from "./Footer";
+
+const MobileNav = ({ user }: MobileNavProps) => {
+  const pathname = usePathname();
+>>>>>>> 296cf462311a6519f7b26acbf2700501e4b83173
   return (
     <section className="w-full max-w-[264px]">
       <Sheet>
@@ -29,10 +40,17 @@ const MobileNav = ({ user }: MobileNavProps) => {
             className="cursor-pointer"
           />
         </SheetTrigger>
+<<<<<<< HEAD
         <SheetContent side="left" className="border-none bg-white">
           <Link
             href="/"
             className="cursor-pointer items-center gap-1 flex px-4"
+=======
+        <SheetContent side="left" className="border-none bg-white p-4">
+          <Link
+            href="/"
+            className="cursor-pointer items-center gap-2 flex"
+>>>>>>> 296cf462311a6519f7b26acbf2700501e4b83173
           >
             <Image
               src={"/icons/logo.svg"}
@@ -47,7 +65,11 @@ const MobileNav = ({ user }: MobileNavProps) => {
 
           <div className="mobilenav-sheet">
             <SheetClose asChild>
+<<<<<<< HEAD
               <nav className="flex h-full flex-col gap-6 pt-16 text-white">
+=======
+              <nav className="flex h-full flex-col gap-6 pt-10 text-white">
+>>>>>>> 296cf462311a6519f7b26acbf2700501e4b83173
                 {sidebarLinks.map((item) => {
                   const isActive =
                     pathname === item.route ||
@@ -61,6 +83,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                           "bg-bank-gradient": isActive,
                         })}
                       >
+<<<<<<< HEAD
                           <Image
                             src={item.imgURL}
                             alt={item.label}
@@ -70,6 +93,17 @@ const MobileNav = ({ user }: MobileNavProps) => {
                               "brightness-[3] invert-0": isActive,
                             })}
                           />
+=======
+                        <Image
+                          src={item.imgURL}
+                          alt={item.label}
+                          width={20}
+                          height={20}
+                          className={cn({
+                            "brightness-[3] invert-0": isActive,
+                          })}
+                        />
+>>>>>>> 296cf462311a6519f7b26acbf2700501e4b83173
                         <p
                           className={cn("text-16 font-semibold text-black-2", {
                             "!text-white": isActive,
@@ -81,12 +115,19 @@ const MobileNav = ({ user }: MobileNavProps) => {
                     </SheetClose>
                   );
                 })}
+<<<<<<< HEAD
 
                 USER
               </nav>
             </SheetClose>
 
             FOOTER
+=======
+                USER
+              </nav>
+            </SheetClose>
+            <Footer user={user} type='mobile' />
+>>>>>>> 296cf462311a6519f7b26acbf2700501e4b83173
           </div>
         </SheetContent>
       </Sheet>
