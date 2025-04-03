@@ -145,9 +145,9 @@ export const createBankAccount = async ({
   shareableId,
 }: createBankAccountProps) => {
   try {
-    const { databases } = await createAdminClient();
+    const { database } = await createAdminClient();
 
-    const bankAccount = await databases.createDocument(
+    const bankAccount = await database.createDocument(
       DATABASE_ID!,
       BANK_COLLECTION_ID!,
       ID.unique(),
